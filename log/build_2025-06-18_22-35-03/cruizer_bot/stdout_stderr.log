@@ -1,0 +1,26 @@
+-- Install configuration: ""
+-- Execute custom install script
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/config/empty.yaml
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/config/view_bot1.rviz
+-- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/description/gazebo_control.xacro
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/description/inertial_macros.xacro
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/description/robot.urdf.xacro
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/description/robot_core.xacro
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/launch/launch_sim.launch.py
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/launch/rsp.launch.py
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/worlds/empty.world
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/ament_index/resource_index/package_run_dependencies/cruizer_bot
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/ament_index/resource_index/parent_prefix_path/cruizer_bot
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/environment/ament_prefix_path.sh
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/environment/ament_prefix_path.dsv
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/environment/path.sh
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/environment/path.dsv
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/local_setup.bash
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/local_setup.sh
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/local_setup.zsh
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/local_setup.dsv
+-- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/package.dsv
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/ament_index/resource_index/packages/cruizer_bot
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/cmake/cruizer_botConfig.cmake
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/cmake/cruizer_botConfig-version.cmake
+-- Up-to-date symlink: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/package.xml

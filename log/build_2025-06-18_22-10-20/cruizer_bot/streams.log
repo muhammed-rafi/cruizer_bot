@@ -1,0 +1,62 @@
+[0.013s] Invoking command in '/home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/build/cruizer_bot': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot
+[0.106s] -- The C compiler identification is GNU 11.4.0
+[0.205s] -- The CXX compiler identification is GNU 11.4.0
+[0.219s] -- Detecting C compiler ABI info
+[0.288s] -- Detecting C compiler ABI info - done
+[0.295s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.295s] -- Detecting C compile features
+[0.296s] -- Detecting C compile features - done
+[0.299s] -- Detecting CXX compiler ABI info
+[0.379s] -- Detecting CXX compiler ABI info - done
+[0.386s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.387s] -- Detecting CXX compile features
+[0.387s] -- Detecting CXX compile features - done
+[0.390s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.534s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.593s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.626s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.700s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.717s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.717s] -- Configured cppcheck include dirs: 
+[0.717s] -- Configured cppcheck exclude dirs and/or files: 
+[0.731s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.732s] -- Configured cpplint exclude dirs and/or files: 
+[0.734s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.738s] -- Added test 'lint_cmake' to check CMake code style
+[0.740s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.757s] -- Added test 'uncrustify' to check C / C++ code style
+[0.757s] -- Configured uncrustify additional arguments: 
+[0.759s] -- Added test 'xmllint' to check XML markup files
+[0.761s] -- Configuring done
+[0.764s] -- Generating done
+[0.765s] -- Build files have been written to: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/build/cruizer_bot
+[0.771s] Invoked command in '/home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/build/cruizer_bot' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot
+[0.771s] Invoking command in '/home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/build/cruizer_bot': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/build/cruizer_bot -- -j8 -l8
+[0.805s] Invoked command in '/home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/build/cruizer_bot' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/build/cruizer_bot -- -j8 -l8
+[0.818s] Invoking command in '/home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/build/cruizer_bot': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/build/cruizer_bot
+[0.824s] -- Install configuration: ""
+[0.825s] -- Execute custom install script
+[0.825s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/config/empty.yaml
+[0.833s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/config/view_bot1.rviz
+[0.841s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/description/inertial_macros.xacro
+[0.849s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/description/robot.urdf.xacro
+[0.856s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/description/robot_core.xacro
+[0.864s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/launch/launch_sim.launch.py
+[0.871s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/launch/rsp.launch.py
+[0.878s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/worlds/empty.world
+[0.886s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/ament_index/resource_index/package_run_dependencies/cruizer_bot
+[0.894s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/ament_index/resource_index/parent_prefix_path/cruizer_bot
+[0.902s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/environment/ament_prefix_path.sh
+[0.911s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/environment/ament_prefix_path.dsv
+[0.920s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/environment/path.sh
+[0.928s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/environment/path.dsv
+[0.937s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/local_setup.bash
+[0.944s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/local_setup.sh
+[0.952s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/local_setup.zsh
+[0.959s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/local_setup.dsv
+[0.967s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/package.dsv
+[0.974s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/ament_index/resource_index/packages/cruizer_bot
+[0.982s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/cmake/cruizer_botConfig.cmake
+[0.989s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/cmake/cruizer_botConfig-version.cmake
+[0.997s] -- Symlinking: /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/install/cruizer_bot/share/cruizer_bot/package.xml
+[1.006s] Invoked command in '/home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/build/cruizer_bot' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/build/cruizer_bot
