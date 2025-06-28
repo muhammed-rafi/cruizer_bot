@@ -69,65 +69,33 @@
       <pose>0 0 0 0 -0 0</pose>
       <self_collide>false</self_collide>
     </model>
-    <include>
-      <uri>file:///home/rafi/.ignition/fuel/fuel.gazebosim.org/openrobotics/models/office desk/1</uri>
-      <name>Desk</name>
-      <pose>4.91756 4.70026 0 0 -0 0</pose>
-    </include>
-    <include>
-      <uri>file:///home/rafi/.ignition/fuel/fuel.gazebosim.org/openrobotics/models/office desk/1</uri>
-      <name>Desk_0</name>
-      <pose>-0.944956 -4.67007 0 0 -0 0</pose>
-    </include>
-    <include>
-      <uri>file:///home/rafi/.ignition/fuel/fuel.gazebosim.org/openrobotics/models/ionic interior/1</uri>
-      <name>ionic_interior</name>
-      <pose>-1.29135 -3.75747 0 0 -0 0</pose>
-    </include>
-    <include>
-      <uri>file:///home/rafi/.ignition/fuel/fuel.gazebosim.org/openrobotics/models/construction cone/3</uri>
-      <name>Construction Cone</name>
-      <pose>0.038249 2.66099 -0 -0 0 -0</pose>
-    </include>
-    <include>
-      <uri>file:///home/rafi/.ignition/fuel/fuel.gazebosim.org/openrobotics/models/construction cone/3</uri>
-      <name>Construction Cone_1</name>
-      <pose>4.45637 -5.23706 -6e-06 -2.8e-05 -8.5e-05 -3.4e-05</pose>
-    </include>
-    <include>
-      <uri>file:///home/rafi/.ignition/fuel/fuel.gazebosim.org/openrobotics/models/construction cone/3</uri>
-      <name>Construction Cone_2</name>
-      <pose>4.18766 0.384289 -3.4e-05 -7.3e-05 1e-06 -1e-06</pose>
-    </include>
-    <include>
-      <uri>file:///home/rafi/.ignition/fuel/fuel.gazebosim.org/openrobotics/models/construction cone/3</uri>
-      <name>Construction Cone_3</name>
-      <pose>-1.1866 -1.75511 -1.6e-05 1.3e-05 1.7e-05 7e-06</pose>
-    </include>
-    <include>
-      <uri>file:///home/rafi/.ignition/fuel/fuel.gazebosim.org/openrobotics/models/construction cone/3</uri>
-      <name>Construction Cone_4</name>
-      <pose>1.39983 -6.71097 -2.3e-05 -1e-06 6.4e-05 7e-06</pose>
-    </include>
-    <include>
-      <uri>file:///home/rafi/.ignition/fuel/fuel.gazebosim.org/openrobotics/models/construction cone/3</uri>
-      <name>Construction Cone_5</name>
-      <pose>-2.48738 1.48909 -0 -0 -0 0</pose>
-    </include>
-    <include>
-      <uri>file:///home/rafi/.ignition/fuel/fuel.gazebosim.org/openrobotics/models/construction cone/3</uri>
-      <name>Construction Cone_6</name>
-      <pose>1.74933 5.80725 -1e-06 -2e-06 2e-06 -0</pose>
-    </include>
-    <model name='ground_plane_1'>
+    <model name='Desk'>
       <static>true</static>
-      <link name='link'>
-        <collision name='collision'>
+      <link name='base_link'>
+        <visual name='visual'>
           <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>100 100</size>
-            </plane>
+            <mesh>
+              <uri>file:///home/rafi/.ignition/fuel/fuel.gazebosim.org/openrobotics/models/office desk/1/meshes/desk.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 1 1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>materials/textures/Desk_Albedo.png</albedo_map>
+                <normal_map>materials/textures/Desk_Normal.png</normal_map>
+                <roughness_map>materials/textures/Desk_Roughness.png</roughness_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <collision name='Box001'>
+          <pose>0.0 0.0 0.750208 0.0 0.0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.8325 2.24977 0.033646</size>
+            </box>
           </geometry>
           <surface>
             <friction>
@@ -137,32 +105,12 @@
             <contact/>
           </surface>
         </collision>
-        <visual name='visual'>
+        <collision name='Box002'>
+          <pose>0.331174 -1.05803 0.372493 0.0 0.0 0.0</pose>
           <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>100 100</size>
-            </plane>
-          </geometry>
-          <material>
-            <ambient>0.8 0.8 0.8 1</ambient>
-            <diffuse>0.8 0.8 0.8 1</diffuse>
-            <specular>0.8 0.8 0.8 1</specular>
-          </material>
-        </visual>
-      </link>
-      <pose>-1.41254 1.78319 0 0 -0 0</pose>
-      <self_collide>false</self_collide>
-    </model>
-    <model name='ground_plane_2'>
-      <static>true</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>100 100</size>
-            </plane>
+            <box>
+              <size>0.035625 0.035625 0.744987</size>
+            </box>
           </geometry>
           <surface>
             <friction>
@@ -172,43 +120,833 @@
             <contact/>
           </surface>
         </collision>
-        <visual name='visual'>
+        <collision name='Box003'>
+          <pose>0.331174 1.05803 0.372493 0.0 0.0 0.0</pose>
           <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>100 100</size>
-            </plane>
+            <box>
+              <size>0.035625 0.035625 0.744987</size>
+            </box>
           </geometry>
-          <material>
-            <ambient>0.8 0.8 0.8 1</ambient>
-            <diffuse>0.8 0.8 0.8 1</diffuse>
-            <specular>0.8 0.8 0.8 1</specular>
-          </material>
-        </visual>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box004'>
+          <pose>-0.331174 1.05803 0.372493 0.0 0.0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.035625 0.035625 0.744987</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box005'>
+          <pose>-0.331174 -1.05803 0.372493 0.0 0.0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.035625 0.035625 0.744987</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box006'>
+          <pose>0.000344962 -1.05803 0.485212 0.0 1.5708 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.035625 0.035625 0.663038</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box007'>
+          <pose>0.000344962 1.05803 0.485212 0.0 1.5708 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.035625 0.035625 0.663038</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box008'>
+          <pose>0.0 -0.00048697 0.485212 -1.5708 1.5708 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.035625 0.035625 2.11509</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box009'>
+          <pose>0.331174 -0.000626326 0.715061 -1.5708 0.0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.035625 0.035625 2.11481</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box010'>
+          <pose>-0.331174 -0.000626326 0.715061 -1.5708 0.0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.035625 0.035625 2.11481</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box011'>
+          <pose>0.0726977 -0.102337 0.768498 0.0 0.0872665 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.129877 0.447191 0.05018</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box012'>
+          <pose>-0.222452 -0.0605589 0.979005 0.0 0.0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.029518 0.63758 0.470188</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box013'>
+          <pose>0.0989945 0.276996 0.782739 0.0 0.0 -0.174533</pose>
+          <geometry>
+            <box>
+              <size>0.116594 0.05708 0.036897</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
       </link>
-      <pose>-1.04543 1.47506 0 0 -0 0</pose>
+      <pose>2.90466 3.35648 0 0 -0 0</pose>
       <self_collide>false</self_collide>
     </model>
-    <include>
-      <uri>file:///home/rafi/.ignition/fuel/fuel.gazebosim.org/openrobotics/models/construction cone/3</uri>
-      <name>Construction Cone_5_1</name>
-      <pose>-1.17289 1.44107 -0 0 -0 -0</pose>
-    </include>
-    <include>
-      <uri>file:///home/rafi/.ignition/fuel/fuel.gazebosim.org/openrobotics/models/construction cone/3</uri>
-      <name>Construction Cone_5_2</name>
-      <pose>2.38868 2.8717 -0 0 0 0</pose>
-    </include>
-    <include>
-      <uri>file:///home/rafi/.ignition/fuel/fuel.gazebosim.org/openrobotics/models/construction cone/3</uri>
-      <name>Construction Cone_5_3</name>
-      <pose>3.57321 1.83872 1.7e-05 8e-06 6e-05 -9e-06</pose>
-    </include>
-    <include>
-      <uri>file:///home/rafi/.ignition/fuel/fuel.gazebosim.org/openrobotics/models/construction cone/3</uri>
-      <name>Construction Cone_5_4</name>
-      <pose>3.66699 1.82608 1e-06 -1e-06 -3e-06 -2e-06</pose>
-    </include>
+    <model name='Desk_0'>
+      <static>true</static>
+      <link name='base_link'>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/rafi/.ignition/fuel/fuel.gazebosim.org/openrobotics/models/office desk/1/meshes/desk.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>1 1 1 1</specular>
+            <pbr>
+              <metal>
+                <albedo_map>materials/textures/Desk_Albedo.png</albedo_map>
+                <normal_map>materials/textures/Desk_Normal.png</normal_map>
+                <roughness_map>materials/textures/Desk_Roughness.png</roughness_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <collision name='Box001'>
+          <pose>0.0 0.0 0.750208 0.0 0.0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.8325 2.24977 0.033646</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box002'>
+          <pose>0.331174 -1.05803 0.372493 0.0 0.0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.035625 0.035625 0.744987</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box003'>
+          <pose>0.331174 1.05803 0.372493 0.0 0.0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.035625 0.035625 0.744987</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box004'>
+          <pose>-0.331174 1.05803 0.372493 0.0 0.0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.035625 0.035625 0.744987</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box005'>
+          <pose>-0.331174 -1.05803 0.372493 0.0 0.0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.035625 0.035625 0.744987</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box006'>
+          <pose>0.000344962 -1.05803 0.485212 0.0 1.5708 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.035625 0.035625 0.663038</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box007'>
+          <pose>0.000344962 1.05803 0.485212 0.0 1.5708 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.035625 0.035625 0.663038</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box008'>
+          <pose>0.0 -0.00048697 0.485212 -1.5708 1.5708 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.035625 0.035625 2.11509</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box009'>
+          <pose>0.331174 -0.000626326 0.715061 -1.5708 0.0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.035625 0.035625 2.11481</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box010'>
+          <pose>-0.331174 -0.000626326 0.715061 -1.5708 0.0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.035625 0.035625 2.11481</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box011'>
+          <pose>0.0726977 -0.102337 0.768498 0.0 0.0872665 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.129877 0.447191 0.05018</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box012'>
+          <pose>-0.222452 -0.0605589 0.979005 0.0 0.0 0.0</pose>
+          <geometry>
+            <box>
+              <size>0.029518 0.63758 0.470188</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <collision name='Box013'>
+          <pose>0.0989945 0.276996 0.782739 0.0 0.0 -0.174533</pose>
+          <geometry>
+            <box>
+              <size>0.116594 0.05708 0.036897</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-2.95875 -4.23677 0 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='Construction Cone'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/construction cone/3/files/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/construction cone/3/files/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>2.5864 -3.44781 -0 0 -0 -0</pose>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='Construction Cone_0'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/construction cone/3/files/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/construction cone/3/files/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-1.47059 3.82054 -0 -0 0 -0</pose>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='Construction Cone_1'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/construction cone/3/files/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/construction cone/3/files/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-3.19944 -0.527639 -0 0 -0 -0</pose>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='Construction Cone_2'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/construction cone/3/files/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/construction cone/3/files/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-0.098719 -3.91437 -0 0 -0 -0</pose>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='Construction Cone_3'>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/construction cone/3/files/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>10 10 10</scale>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/construction cone/3/files/meshes/construction_cone.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>4.51068 -0.919323 -0 -0 0 -0</pose>
+      <static>false</static>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='Pine Tree'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/meshes/pine_tree.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='branch'>
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/meshes/pine_tree.dae</uri>
+              <submesh>
+                <name>Branch</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <double_sided>true</double_sided>
+            <diffuse>1 1 1 1</diffuse>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/scripts/</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/textures/</uri>
+              <name>PineTree/Branch</name>
+            </script>
+            <pbr>
+              <metal>
+                <albedo_map>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/textures/branch_2_diffuse.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name='bark'>
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/meshes/pine_tree.dae</uri>
+              <submesh>
+                <name>Bark</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/scripts/</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/textures/</uri>
+              <name>PineTree/Bark</name>
+            </script>
+            <pbr>
+              <metal>
+                <albedo_map>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/textures/bark_diffuse.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-1.68874 -1.42257 0 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='Pine Tree_0'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/meshes/pine_tree.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='branch'>
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/meshes/pine_tree.dae</uri>
+              <submesh>
+                <name>Branch</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <double_sided>true</double_sided>
+            <diffuse>1 1 1 1</diffuse>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/scripts/</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/textures/</uri>
+              <name>PineTree/Branch</name>
+            </script>
+            <pbr>
+              <metal>
+                <albedo_map>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/textures/branch_2_diffuse.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name='bark'>
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/meshes/pine_tree.dae</uri>
+              <submesh>
+                <name>Bark</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/scripts/</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/textures/</uri>
+              <name>PineTree/Bark</name>
+            </script>
+            <pbr>
+              <metal>
+                <albedo_map>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/textures/bark_diffuse.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>6.84361 8.57896 0 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='Pine Tree_1'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/meshes/pine_tree.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='branch'>
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/meshes/pine_tree.dae</uri>
+              <submesh>
+                <name>Branch</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <double_sided>true</double_sided>
+            <diffuse>1 1 1 1</diffuse>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/scripts/</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/textures/</uri>
+              <name>PineTree/Branch</name>
+            </script>
+            <pbr>
+              <metal>
+                <albedo_map>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/textures/branch_2_diffuse.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <visual name='bark'>
+          <geometry>
+            <mesh>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/meshes/pine_tree.dae</uri>
+              <submesh>
+                <name>Bark</name>
+              </submesh>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <script>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/scripts/</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/textures/</uri>
+              <name>PineTree/Bark</name>
+            </script>
+            <pbr>
+              <metal>
+                <albedo_map>https://fuel.gazebosim.org/1.0/openrobotics/models/pine tree/6/files/materials/textures/bark_diffuse.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 -0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>8.96479 -8.99329 0 0 -0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
     <light name='sun' type='directional'>
       <pose>0 0 10 0 -0 0</pose>
       <cast_shadows>true</cast_shadows>
