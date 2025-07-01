@@ -7,6 +7,7 @@ from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, TextSubstitution
 from launch_ros.actions import Node
+from launch.actions import TimerAction
 
 def generate_launch_description():
 
@@ -49,22 +50,27 @@ def generate_launch_description():
             os.path.join(get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py')
         ),
         launch_arguments={
-            'gz_args': TextSubstitution(text='-r -v4 ' + default_world),
+            'gz_args': [TextSubstitution(text='-r -v4 '), world],
             'on_exit_shutdown': 'true'
         }.items()
     )
 
     # === Spawn robot in Gazebo ===
-    spawn_entity = Node(
-        package='ros_gz_sim',
-        executable='create',
-        arguments=[
-            '-topic', 'robot_description',
-            '-name', 'my_bot',
-            '-z', '0.1'
-        ],
-        output='screen'
-    )
+    spawn_entity = TimerAction(
+    period=5.0,  # wait 5 seconds
+    actions=[
+        Node(
+            package='ros_gz_sim',
+            executable='create',
+            arguments=[
+                '-topic', 'robot_description',
+                '-name', 'my_bot',
+                '-z', '0.1'
+            ],
+            output='screen'
+        )
+    ]
+)
 
     # === Bridge Configuration ===
     bridge_params = os.path.join(
