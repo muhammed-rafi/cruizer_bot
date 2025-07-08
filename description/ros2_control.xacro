@@ -54,13 +54,34 @@
             <state_interface name="position"/>
         </joint>
     </ros2_control>
-    
+
+
+    <!-- ✅ Add transmission blocks below
+  <transmission name="left_wheel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_wheel_motor">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_wheel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_wheel_motor">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission> -->
 
     <gazebo>
-        <plugin name="gz_ros2_control::GazeboSimROS2ControlPlugin" filename="libgz_ros2_control-system.so">
+        <plugin name="gz_ros2_control" filename="libgz_ros2_control.so">
             <parameters>$(find cruizer_bot)/config/my_controllers.yaml</parameters>
-            <parameters>$(find cruizer_bot)/config/gaz_ros2_ctl_use_sim.yaml</parameters>
         </plugin>
-    </gazebo>
-
+    </gazebo>                       
 </robot>
