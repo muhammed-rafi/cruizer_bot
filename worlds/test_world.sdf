@@ -1,5 +1,13 @@
 <sdf version='1.9'>
   <world name='empty'>
+    <plugin
+      filename="libgz_ros2_control-system.so"
+      name="gz_ros2_control::GazeboRos2ControlSystem">
+
+      <controller_manager_ros_node_name>/controller_manager</controller_manager_ros_node_name>
+      <robot_param>robot_description</robot_param>
+      <robot_param_node>robot_state_publisher</robot_param_node>
+    </plugin>
     <physics name='1ms' type='ignored'>
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1</real_time_factor>

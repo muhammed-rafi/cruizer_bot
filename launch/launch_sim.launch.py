@@ -2,7 +2,7 @@ import os
 
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, TimerAction, ExecuteProcess
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, TimerAction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, TextSubstitution
 from launch_ros.actions import Node
@@ -67,21 +67,22 @@ def generate_launch_description():
         ]
     )
 
-    # # Explicitly start ros2_control_node (critical!)
-    # controller_manager_node = TimerAction(
-    #     period=6.0,
-    #     actions=[
-    #         Node(
-    #             package='controller_manager',
-    #             executable='ros2_control_node',
-    #             parameters=[
-    #                 os.path.join(get_package_share_directory(package_name), 'config', 'my_controllers.yaml'),
-    #                 {'use_sim_time': use_sim_time}
-    #             ],
-    #             output='screen'
-    #         )
-    #     ]
-    # )
+    # Explicitly start ros2_control_node (critical!)
+    controller_manager_node = TimerAction(
+        period=6.0,
+        actions=[
+            Node(
+                package='controller_manager',
+                executable='ros2_control_node',
+                parameters=[
+                    # This requires the robot_description to be loaded
+                    os.path.join(get_package_share_directory(package_name), 'config', 'my_controllers.yaml'),
+                    {'use_sim_time': use_sim_time}
+                ],
+                output='screen'
+            )
+        ]
+    )
 
     # Spawner for joint_state_broadcaster
     joint_broad_spawner = TimerAction(
@@ -90,7 +91,7 @@ def generate_launch_description():
             Node(
                 package='controller_manager',
                 executable='spawner',
-                arguments=['joint_broad'],
+                arguments=['joint_broad', '--controller-manager', '/controller_manager'],
                 output='screen'
             )
         ]
@@ -103,19 +104,17 @@ def generate_launch_description():
             Node(
                 package='controller_manager',
                 executable='spawner',
-                arguments=['diff_cont'],
+                arguments=['diff_cont', '--controller-manager', '/controller_manager'],
                 output='screen'
             )
         ]
     )
 
-    # Gazebo <-> ROS 2 bridge
     bridge_params = os.path.join(
         get_package_share_directory(package_name),
         'config',
         'gz_bridge.yaml'
     )
-
     ros_gz_bridge = Node(
         package="ros_gz_bridge",
         executable="parameter_bridge",
@@ -125,7 +124,6 @@ def generate_launch_description():
         ],
         output='screen'
     )
-
     ros_gz_image_bridge = Node(
         package="ros_gz_image",
         executable="image_bridge",
@@ -139,6 +137,7 @@ def generate_launch_description():
         rsp,
         gazebo,
         spawn_entity,
+        controller_manager_node,
         joint_broad_spawner,
         diff_drive_spawner,
         ros_gz_bridge,
