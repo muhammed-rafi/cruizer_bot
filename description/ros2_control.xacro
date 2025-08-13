@@ -6,7 +6,7 @@
         <hardware>
             <plugin>gz_ros2_control/GazeboSystem</plugin>
         </hardware>
-        <joint name="left_wheel_joint">
+        <joint name="left_wheel_joint"> 
             <command_interface name="velocity">
                 <param name="min">-10</param>
                 <param name="max">10</param>
@@ -24,9 +24,9 @@
         </joint>
     </ros2_control>
 
-    <!-- <gazebo>
-        <plugin name="gz_ros2_control" filename="libgz_ros2_control.so">
-            <parameters>$(find cruizer_bot)/config/my_controllers.yaml</parameters>
+    <gazebo>
+        <plugin name="ign_ros2_control" filename="libgz_ros2_control.so">
+            <parameters>/home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/config/my_controllers.yaml</parameters>
         </plugin>
-    </gazebo>                        -->
+    </gazebo>                       
 </robot>
