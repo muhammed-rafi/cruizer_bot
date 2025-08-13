@@ -25,7 +25,7 @@
     </ros2_control>
 
     <gazebo>
-        <plugin name="ign_ros2_control" filename="libgz_ros2_control.so">
+        <plugin name="ign_ros2_control" filename="libign_ros2_control-system.so"/>
             <parameters>/home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/config/my_controllers.yaml</parameters>
         </plugin>
     </gazebo>                       
