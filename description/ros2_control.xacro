@@ -1,32 +1,35 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    
-    <ros2_control name="GazeboSystem" type="system">
-        <hardware>
-            <plugin>gz_ros2_control/GazeboSystem</plugin>
-        </hardware>
-        <joint name="left_wheel_joint"> 
-            <command_interface name="velocity">
-                <param name="min">-10</param>
-                <param name="max">10</param>
-            </command_interface>
-            <state_interface name="velocity"/>
-            <state_interface name="position"/>
-        </joint>
-        <joint name="right_wheel_joint">
-            <command_interface name="velocity">
-                <param name="min">-10</param>
-                <param name="max">10</param>
-            </command_interface>
-            <state_interface name="velocity"/>
-            <state_interface name="position"/>
-        </joint>
-    </ros2_control>
+  <!-- ros2_control setup for Ignition Gazebo -->
+   <ros2_control name="IgnitionSystem" type="system">
+    <hardware>
+      <plugin>ign_ros2_control/IgnitionSystem</plugin>
+    </hardware>
 
-    <gazebo>
-        <plugin name="ign_ros2_control" filename="libign_ros2_control-system.so"/>
-            <parameters>/home/rafi/Documents/Robotics/Cruizer_bot/dev_ws/src/cruizer_bot/config/my_controllers.yaml</parameters>
+    <joint name="left_wheel_joint">
+      <command_interface name="velocity">
+        <param name="min">-10</param>
+        <param name="max">10</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="position"/>
+    </joint>
+
+    <joint name="right_wheel_joint">
+      <command_interface name="velocity">
+        <param name="min">-10</param>
+        <param name="max">10</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="position"/>
+    </joint>
+  </ros2_control>
+
+   <gazebo>
+        <plugin filename="ign_ros2_control-system" name="ign_ros2_control::IgnitionROS2ControlPlugin">
+            <parameters>$(find cruizer_bot)/config/my_controllers.yaml</parameters>
         </plugin>
-    </gazebo>                       
+    </gazebo>
+
 </robot>

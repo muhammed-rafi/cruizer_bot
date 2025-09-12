@@ -7,6 +7,8 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, TextSubstitution
 from launch_ros.actions import Node
 
+
+
 def generate_launch_description():
     package_name = 'cruizer_bot'
 
@@ -31,7 +33,7 @@ def generate_launch_description():
         description='Use simulation time'
     )
 
-    # Robot State Publisher
+    # Robot State Publisher (publishes /robot_description)
     rsp = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(get_package_share_directory(package_name), 'launch', 'rsp.launch.py')
@@ -39,7 +41,7 @@ def generate_launch_description():
         launch_arguments={'use_sim_time': use_sim_time}.items()
     )
 
-    # Gazebo Simulation (Fortress)
+    # Start Ignition Gazebo (Fortress)
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py')
@@ -47,10 +49,11 @@ def generate_launch_description():
         launch_arguments={
             'gz_args': [TextSubstitution(text='-r -v4 '), world],
             'on_exit_shutdown': 'true'
-        }.items()
+        }.items(),
     )
 
-    # Spawn robot in Gazebo
+
+    # Spawn the robot from /robot_description
     spawn_entity = TimerAction(
         period=5.0,
         actions=[
@@ -67,24 +70,7 @@ def generate_launch_description():
         ]
     )
 
-    # Explicitly start ros2_control_node (critical!)
-    controller_manager_node = TimerAction(
-        period=6.0,
-        actions=[
-            Node(
-                package='controller_manager',
-                executable='ros2_control_node',
-                parameters=[
-                    # This requires the robot_description to be loaded
-                    os.path.join(get_package_share_directory(package_name), 'config', 'my_controllers.yaml'),
-                    {'use_sim_time': use_sim_time}
-                ],
-                output='screen'
-            )
-        ]
-    )
-
-    # Spawner for joint_state_broadcaster
+    # Controller spawners — Gazebo plugin already provides /controller_manager
     joint_broad_spawner = TimerAction(
         period=8.0,
         actions=[
@@ -97,7 +83,6 @@ def generate_launch_description():
         ]
     )
 
-    # Spawner for diff drive controller
     diff_drive_spawner = TimerAction(
         period=10.0,
         actions=[
@@ -110,20 +95,20 @@ def generate_launch_description():
         ]
     )
 
+    # ros_gz bridges
     bridge_params = os.path.join(
         get_package_share_directory(package_name),
         'config',
         'gz_bridge.yaml'
     )
+
     ros_gz_bridge = Node(
         package="ros_gz_bridge",
         executable="parameter_bridge",
-        arguments=[
-            '--ros-args',
-            '-p', f'config_file:={bridge_params}',
-        ],
+        arguments=['--ros-args', '-p', f'config_file:={bridge_params}'],
         output='screen'
     )
+
     ros_gz_image_bridge = Node(
         package="ros_gz_image",
         executable="image_bridge",
@@ -136,7 +121,6 @@ def generate_launch_description():
         declare_sim_time_arg,
         rsp,
         gazebo,
-        controller_manager_node,
         spawn_entity,
         joint_broad_spawner,
         diff_drive_spawner,
