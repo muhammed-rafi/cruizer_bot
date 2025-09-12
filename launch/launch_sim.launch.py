@@ -35,10 +35,9 @@ def generate_launch_description():
 
     # Robot State Publisher (publishes /robot_description)
     rsp = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(get_package_share_directory(package_name), 'launch', 'rsp.launch.py')
-        ),
-        launch_arguments={'use_sim_time': use_sim_time}.items()
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory(package_name),'launch','rsp.launch.py'
+                )]), launch_arguments={'use_sim_time': 'true', 'use_ros2_control': 'true'}.items()
     )
 
     # Start Ignition Gazebo (Fortress)
