@@ -223,7 +223,7 @@
       <static>true</static>
     </model>
     <model name='charging_station'>
-      <pose>14.7 -10.6 -0.04 0 -0 0</pose>
+      <pose>14.7 -10.6 -0.04 0 0 -0</pose>
       <link name='charging_station_base_link'>
         <pose>0 0 0.05 0 0 -1.5708</pose>
         <collision name='charging_station_collision'>
@@ -268,7 +268,7 @@
       <self_collide>false</self_collide>
     </model>
     <model name='cart1'>
-      <pose>-5.73 15 0.25 0 -0 0</pose>
+      <pose>-5.73 15 0.109991 -0 -1e-06 0</pose>
       <link name='base_link'>
         <pose>0 0 0 0 0 -1.5708</pose>
         <inertial>
@@ -379,9 +379,9 @@
         <enable_wind>false</enable_wind>
       </link>
       <link name='back_left'>
-        <pose>-1.04 -0.245 -0.05 0 -0 1.5708</pose>
+        <pose>-1.04 -0.245 -0.05 0 0 1.5708</pose>
         <inertial>
-          <pose>0 0 0 0 1.5708 0</pose>
+          <pose>0 0 0 3.14159 1.57079 3.14159</pose>
           <mass>0.01</mass>
           <inertia>
             <ixx>1.7499999999999998e-05</ixx>
@@ -451,12 +451,12 @@
             <friction>0.5</friction>
           </dynamics>
         </axis>
-        <pose>-0 -0 0 0 -0 0</pose>
+        <pose>0 0 0 0 -0 0</pose>
       </joint>
       <link name='back_right'>
-        <pose>-1.04 0.245 -0.05 0 -0 1.5708</pose>
+        <pose>-1.04 0.245 -0.05 -0 0 1.5708</pose>
         <inertial>
-          <pose>0 0 0 0 1.5708 0</pose>
+          <pose>0 0 0 3.14159 1.57079 3.14159</pose>
           <mass>0.01</mass>
           <inertia>
             <ixx>1.7499999999999998e-05</ixx>
@@ -526,10 +526,10 @@
             <friction>0.5</friction>
           </dynamics>
         </axis>
-        <pose>0 -0 0 0 -0 0</pose>
+        <pose>-0 0 0 0 -0 0</pose>
       </joint>
       <link name='wheel_sup_front_left'>
-        <pose>0 -0.245 0.05 0 -0 1.5708</pose>
+        <pose>0 -0.245 0.05 -0 0 1.5708</pose>
         <inertial>
           <pose>0 0 0 0 -0 0</pose>
           <mass>0.01</mass>
@@ -576,9 +576,9 @@
         <pose>-0 0 0 0 -0 0</pose>
       </joint>
       <link name='front_left'>
-        <pose>-0.04 -0.245 -0.05 0 -0 1.5708</pose>
+        <pose>-0.04 -0.245 -0.05 0 0 1.5708</pose>
         <inertial>
-          <pose>0 0 0 0 1.5708 0</pose>
+          <pose>0 0 0 3.14159 1.57079 3.14159</pose>
           <mass>0.01</mass>
           <inertia>
             <ixx>1.7499999999999998e-05</ixx>
@@ -648,10 +648,10 @@
             <friction>0.5</friction>
           </dynamics>
         </axis>
-        <pose>0 -0 0 0 -0 0</pose>
+        <pose>-0 0 0 0 -0 0</pose>
       </joint>
       <link name='wheel_sup_front_right'>
-        <pose>0 0.245 0.05 0 -0 1.5708</pose>
+        <pose>0 0.245 0.05 -0 0 1.5708</pose>
         <inertial>
           <pose>0 0 0 0 -0 0</pose>
           <mass>0.01</mass>
@@ -695,12 +695,12 @@
             <friction>0</friction>
           </dynamics>
         </axis>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose>0 -0 0 0 -0 0</pose>
       </joint>
       <link name='front_right'>
-        <pose>-0.04 0.245 -0.05 0 -0 1.5708</pose>
+        <pose>-0.04 0.245 -0.05 0 0 1.5708</pose>
         <inertial>
-          <pose>0 0 0 0 1.5708 0</pose>
+          <pose>0 0 0 3.14159 1.57079 3.14159</pose>
           <mass>0.01</mass>
           <inertia>
             <ixx>1.7499999999999998e-05</ixx>
@@ -1181,7 +1181,7 @@
       <static>true</static>
     </model>
     <model name='pallet_box_mobile'>
-      <pose>4.4161 14.6952 0.01 0 -0 0</pose>
+      <pose>4.4161 14.6952 -0.005073 0 -0 -0</pose>
       <self_collide>false</self_collide>
       <link name='pallet_base'>
         <pose>0 0 0 0 -0 0</pose>
@@ -1305,7 +1305,7 @@
       <static>false</static>
     </model>
     <model name='pallet_box_mobile_0'>
-      <pose>4.45415 13.6212 0.01 0 -0 0</pose>
+      <pose>4.45415 13.6212 -0.005073 -0 -0 -0</pose>
       <self_collide>false</self_collide>
       <link name='pallet_base'>
         <pose>0 0 0 0 -0 0</pose>
@@ -1429,7 +1429,7 @@
       <static>false</static>
     </model>
     <model name='pallet_box_mobile_1'>
-      <pose>4.4468 12.229 0.01 0 -0 0</pose>
+      <pose>4.4468 12.229 -0.005073 0 -0 -0</pose>
       <self_collide>false</self_collide>
       <link name='pallet_base'>
         <pose>0 0 0 0 -0 0</pose>
@@ -2159,6 +2159,53 @@
         <update_frequency>20</update_frequency>
       </plugin>
       <static>true</static>
+    </model>
+    <model name='RoboCup SPL Ball'>
+      <static>false</static>
+      <link name='ball'>
+        <inertial>
+          <mass>0.0055999999999999999</mass>
+          <inertia>
+            <ixx>2.3700000000000002e-06</ixx>
+            <iyy>2.3700000000000002e-06</iyy>
+            <izz>2.3700000000000002e-06</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <sphere>
+              <radius>0.032500000000000001</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <sphere>
+              <radius>0.032500000000000001</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.87 0.26 0.07 1</ambient>
+            <diffuse>0.87 0.26 0.07 1</diffuse>
+            <specular>0.87 0.26 0.07 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 -0 0</pose>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-1.24111 -0.181511 0.032499 0 -0 0</pose>
+      <self_collide>false</self_collide>
     </model>
     <light name='sun' type='directional'>
       <pose>-5 -3 10 0 -0 0</pose>
